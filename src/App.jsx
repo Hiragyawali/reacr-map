@@ -6,6 +6,8 @@ import Gallery from "./Gallery.jsx";
 import Book from "./Book.jsx";
 import Contact from "./Contact.jsx";
 import About from "./About.jsx";
+import Productlist from "./components/Productlist.jsx";
+
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -20,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Hero />} />
         <Route path="/book" element={<Book />} />
       </Routes>
+      <Productlist/>
       <Service />
       <Gallery />
       <About />
