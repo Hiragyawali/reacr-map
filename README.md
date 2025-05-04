@@ -29,5 +29,5 @@ Welcome to **Hotel Babari's website** – a modern, responsive React-based hotel
 Clone the repository:
 
 ```bash
-git clone https://github.com/anup0206/Hotel_Babari.git
+git clone https://github.com/Hiragyawali/reacr-map.git
 cd Hotel_Babari
