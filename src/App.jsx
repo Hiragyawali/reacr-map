@@ -7,10 +7,12 @@ import Book from "./Book.jsx";
 import Contact from "./Contact.jsx";
 import About from "./About.jsx";
 import Productlist from "./components/Productlist.jsx";
+import Button from "./button.jsx";
 
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 
 const App = () => {
@@ -18,6 +20,9 @@ const App = () => {
 
     <Router>
       <Navbar />
+      <div className=" bg-amber-700 content-center">
+     <Button/>
+     </div>
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/book" element={<Book />} />
@@ -27,6 +32,9 @@ const App = () => {
       <Gallery />
       <About />
       <Contact />
+     
+   
+
     </Router>
   );
 };

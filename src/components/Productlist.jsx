@@ -1,32 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Productcard from './Productcard';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import ProductCard from "./Productcard";
 
 const Productlist = () => {
-    const [products, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
 
-    const fetchProducts = async () => {
-        const res = await axios.get("https://fakestoreapi.com/products");
-        setProduct(res.data);
-        console.log(res.data, "Data fetch" );
-    };
+  const fetchProducts = async () => {
+    const res = await axios.get("https://fakestoreapi.com/products");
+    setProducts(res.data);
+  };
 
-    useEffect(() => {
-        fetchProducts();
-    }, []);
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
-    return (
-        <div>
-            {products.map((val,index)=>{
-                return(
-                    <div key={index}>
-                        <Productcard title={val.title} image={val.image} price={val.price} />
-                    </div>
-                )
-                
-            })}
-        </div>
-    );
+  return (
+    <div className="p-4">
+      {/* Add Product Button */}
+      <div className="mb-4">
+        <button className="bg-blue-600 text-white px-4 py-2 rounded shadow">
+          Add Product
+        </button>
+      </div>
+
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            title={product.title}
+            price={product.price}
+            image={product.image}
+            description={product.description}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Productlist;
